@@ -13,7 +13,7 @@ app.use(express.static('views'));
 const SerialPort = require('serialport');
 const Readline = SerialPort.parsers.Readline;
 //Connect serial port to port.....
-const port = new SerialPort('');
+const port = new SerialPort('/dev/cu.usbserial-1460');
  //Read the line only when new line comes.
 const parser = port.pipe(new Readline({delimiter: '\r\n'}));
  //Read data
