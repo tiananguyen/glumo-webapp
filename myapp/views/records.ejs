@@ -23,65 +23,62 @@
     <!-- Library for chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
     <script>
-       var ctx = document.getElementById('myChart').getContext('2d');
-       // Create chart for
-
->>>>>>> tiana
-var chart = new Chart(ctx, {
-// The type of chart we want to create
-type: 'line',
-// The data for our dataset
-labels: ['02/25/2019', '02/26/2019', '02/27/2019', '02/28/2019', '03/01/2019', '03/02/2019', '03/03/2019'],
- datasets: [{
-     label: "Glucose Reading Records",
-     borderColor: "#003300",
-     data: [110,113,119,110,120,115,111,112],
-     fill: true,
-     pointStyle: 'circle',
-     backgroundColor: 'rgb(230,255,230, .5)',
-     pointRadius: 5,
-     pointHoverRadius: 7,
-     lineTension: 0,
- },
- {
-   label: "Low",
-   borderColor: "#0a1b56",
-   data: [70, 70, 70, 70, 70, 70, 70, 70],
-   fill: false,
-   borderDash: [10,5],
-   pointStyle: 'circle',
-   backgroundColor: 'rgb(230,255,230, .5)',
-   pointRadius: 5,
-   pointHoverRadius: 7,
-   lineTension: 0,
- },
- {
-   label: "High",
-   borderColor: "#0a1b56",
-   data: [130, 130, 130, 130, 130, 130, 130, 130],
-   fill: false,
-   borderDash: [10,5],
-   pointStyle: 'circle',
-   backgroundColor: 'rgb(230,255,230, .5)',
-   pointRadius: 5,
-   pointHoverRadius: 7,
-   lineTension: 0,
- }]
-},
-// Configuration options go here
-options: {
- scales: {
-   yAxes: [{
-     ticks: {
-       suggestedMax: 140,
-       suggestedMin: 60
-     }
-   }]
- }
-}
-});
-
-     </script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+                  // The type of chart we want to create
+    type: 'line',
+                  // The data for our dataset
+    data: {
+    labels: ['02/25/2019', '02/26/2019', '02/27/2019', '02/28/2019', '03/01/2019', '03/02/2019', '03/03/2019'],
+    datasets: [{
+      label: "Blood Glucose Level",
+      borderColor: "#003300",
+      data: [110,113,119,110,120,115,111,112],
+      fill: true,
+      pointStyle: 'circle',
+      backgroundColor: 'rgba(230, 255, 230, 0.5)',
+      pointRadius: 5,
+      pointHoverRadius: 7,
+      lineTension: 0,
+    },
+    {
+      label: "Low",
+      borderColor: "#0a1b56",
+      data: [70, 70, 70, 70, 70, 70, 70, 70],
+      fill: false,
+      borderDash: [10,5],
+      pointStyle: 'circle',
+      backgroundColor: 'rgba(230, 255, 230, 0.5)',
+      pointRadius: 5,
+      pointHoverRadius: 7,
+      lineTension: 0,
+    },
+    {
+      label: "High",
+      borderColor: "#0a1b56",
+      data: [130, 130, 130, 130, 130, 130, 130, 130],
+      fill: false,
+      borderDash: [10,5],
+      pointStyle: 'circle',
+      backgroundColor: 'rgba(230, 255, 230, 0.5)',
+      pointRadius: 5,
+      pointHoverRadius: 7,
+      ineTension: 0,
+    },]
+  },
+                // Configuration
+                options: {
+                  scales: {
+                    yAxes: [{
+                      ticks: {
+                        suggestedMax: 140,
+                        suggestedMin: 60
+                      }
+                    }]
+                  }
+                }
+            });
+       </script>
 
     <!-- CSS code -->
   <style>
