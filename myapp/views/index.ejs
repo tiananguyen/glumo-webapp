@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GluMo: Non-invasive Glucose Monitor</title>
+    <title>A GluMo: Non-invasive Glucose Monitor</title>
     <link rel = "stylesheets" href = "style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="vendor/device-mockups/device-mockups.min.css">
@@ -9,6 +9,7 @@
   <body>
     <div class = "topnav">
       <a href = "#Login"><i class = "fa fa-fw fa-user"></i> Login </a>
+      <a href = "info"><i class = "fa fa-fw fa-info"></i> Info </a>
       <a href = "records"><i class = "fa fa-fw fa-chart-bar"></i> Reports </a>
       <a href = "start"><i class = "fa fa-fw fa-plus"></i>New Glucose </a>
       <div class = "topnav-left">
@@ -19,18 +20,18 @@
       <h1><center>Welcome to GluMo!</center></h1>
     </div>
     <div class = "information">
-      <p1><center>ALWAYS KNOW YOUR GLUCOSE LEVEL PAINLESSLY</p1></center>
+      <p1><center>ALWAYS KNOW YOUR GLUCOSE LEVEL PAINLESSLY</center></p1>
     </div>
     <br><br><br><br><br><br><br><br><br>
     <!-- Buttons -->
     <center><div class "row">
-      <a href = "#About" class = "customButton">LEARN MORE!</a>
-      <a href = "#New_Glucose" class = "customButton2">START NOW!</a>
+      <a href = "info" class = "customButton">LEARN MORE!</a>
+      <a href = "start" class = "customButton2">START NOW!</a>
     </div></center>
 <!-- This is the CSS code -->
 <style>
 body {
-  background-image: url("https://www.peerwell.co/blog/content/images/2016/04/bloodsugarlevels.jpg");
+  background-image: url("backgroundNew2.jpeg");
   background-repeat: no-repeat;
   background-size:cover;
   margin: 0;
@@ -65,29 +66,31 @@ a {
 }
 
 .topnav a:hover {
-  background-color: #31A6FF;
+  background-color: #ffffff;
   color: black;
 }
 
-    .topnav a.active {
-      background-color: #4CAF50;
-      color: white;
-    }
+.topnav a:active {
+  background-color: #FFFFFF;
+  color: black;
+}
 
 .topnav-left {
   float:left
 }
 
 .customButton {
-  color: #31A6FF;
+  color: #000000;
   font-family: Muli, Helvetica, Aria, sans-serif;
   font-weight: 400;
   font-size: 15px;
   text-aligne: center;
   text-decoration: none;
   letter-spacing: 2px;
+  background-color: #ffffff;
 
-      border: solid 2px #31A6FF;
+
+      border: solid 2px #001a00;
       border-radius: 50px;
 
       padding-bottom: 12px;
@@ -104,22 +107,22 @@ a {
 
 
 .customButton:hover {
-  background-color: #31A6FF;
-  color: #fff;
+  background-color: rgb(230,255,230, .5);
+  color: #000000;
 }
 
 .customButton2 {
-  color: #31A6FF;
+  color: #000000;
   font-family: Muli, Helvetica, Aria, sans-serif;
   font-weight: 400;
   font-size: 15px;
   text-aligne: center;
   text-decoration: none;
   letter-spacing: 2px;
-  background-color: rgba(178, 034, 034, 0.8);
+  background-color: #ffffff;
 
 
-  border: solid 2px #31A6FF;
+  border: solid 2px #001a00;
   border-radius: 50px;
 
   padding-bottom: 12px;
@@ -136,8 +139,8 @@ a {
 
 
 .customButton2:hover {
-  background-color: #31A6FF;
-  color: #fff;
+  background-color: rgb(230,255,230, .5);
+  color: #000000;
 }
 </style>
 
