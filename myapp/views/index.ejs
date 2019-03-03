@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Glumo</title>
+    <title>A GluMo: Non-invasive Glucose Monitor</title>
     <link rel = "stylesheets" href = "style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="vendor/device-mockups/device-mockups.min.css">
@@ -9,39 +9,60 @@
   <body>
     <div class = "topnav">
       <a href = "#Login"><i class = "fa fa-fw fa-user"></i> Login </a>
+<<<<<<< HEAD
       <a href = "#Reports"><i class = "fa fa-fw fa-chart-bar"></i> Reports </a>
       <a href = "start"><i class = "fa fa-fw fa-plus"></i>New Glucose </a>
     </div>
     <h1><center>Welcome to GluMo!</center></h1>
     <p><center> Always know your glucose level the easy way! </center></p>
     <div class = "col-sm-12 text-center">
+=======
+      <a href = "records"><i class = "fa fa-fw fa-chart-bar"></i> Reports </a>
+      <a href = "start"><i class = "fa fa-fw fa-plus"></i>New Glucose </a>
+      <div class = "topnav-left">
+        <a href = "home"><i class = "fa fa-fw fa-home"></i> </a>
+      </div>
+    </div>
+    <div class = "title">
+      <h1><center>Welcome to GluMo!</center></h1>
+    </div>
+    <div class = "information">
+      <p1><center>ALWAYS KNOW YOUR GLUCOSE LEVEL PAINLESSLY</p1></center>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <!-- Buttons -->
+    <center><div class "row">
+>>>>>>> 537c460df74207ecb3766fb8af6e1a7082f06f84
       <a href = "#About" class = "customButton">LEARN MORE!</a>
-      <a href = "#Add_Glucose" class = "customButton">START NOW!</a>
-
+      <a href = "#New_Glucose" class = "customButton2">START NOW!</a>
+    </div></center>
 <!-- This is the CSS code -->
 <style>
 body {
+<<<<<<< HEAD
   padding: 50px;
   font: 26px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+=======
+  background-image: url("https://emssound.net/wp-content/uploads/2018/02/Does-Sugar-Cause-T2D-1440x810.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  margin: 0;
+  font: 26px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+>>>>>>> 537c460df74207ecb3766fb8af6e1a7082f06f84
 
 a {
   color: #FF0000;
 }
 
-.site-logo {
-  background-color: black;
-  overflow: hidden;
+.title {
+  font-size: 32px;
 }
 
-.site-logo a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-
-  text-decoration: none;
-  font-size: 18px;
+.information {
+  font-size: 24px;
+  letter-spacing: 0.2px;
 }
-
 .topnav {
   background-color: black;
   overflow: hidden;
@@ -54,15 +75,16 @@ a {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 18px;
+  font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .topnav a:hover {
-  background-color: #31A6FF;
+  background-color: #FFFFFF;
   color: black;
 }
 
 .topnav a.active {
-  background-color: #4CAF50;
+  background-color: #31A6FF;
   color: white;
 }
 
@@ -79,6 +101,38 @@ a {
   text-decoration: none;
   letter-spacing: 2px;
 
+      border: solid 2px #31A6FF;
+      border-radius: 50px;
+
+      padding-bottom: 12px;
+      padding-left: 45px;
+      padding-right: 45px;
+      padding-top:12px;
+      vertical-align: middle;
+      marginleft: 1%;
+      margin-right: 1%;
+
+      -webkit-transition-duration: .35s;
+      transition-duration: .35s;
+    }
+
+
+.customButton:hover {
+  background-color: #31A6FF;
+  color: #fff;
+}
+
+.customButton2 {
+  color: #31A6FF;
+  font-family: Muli, Helvetica, Aria, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  text-aligne: center;
+  text-decoration: none;
+  letter-spacing: 2px;
+  background-color: rgba(178, 034, 034, 0.8);
+
+
   border: solid 2px #31A6FF;
   border-radius: 50px;
 
@@ -94,11 +148,11 @@ a {
   transition-duration: .35s;
 }
 
-.customButton:hover {
+
+.customButton2:hover {
   background-color: #31A6FF;
   color: #fff;
 }
-
 </style>
 
 </html>
