@@ -41,10 +41,43 @@
              pointRadius: 5,
              pointHoverRadius: 7,
              lineTension: 0,
+         }
+         {
+           label: "Low",
+           borderColor: "#0a1b56",
+           data: [70, 70, 70, 70, 70, 70, 70, 70],
+           fill: false,
+           borderDash: [10,5],
+           pointStyle: 'circle',
+           backgroundColor: 'rgba(255, 99, 132, 0.2)',
+           pointRadius: 5,
+           pointHoverRadius: 7,
+           lineTension: 0,
+         },
+         {
+           label: "High",
+           borderColor: "#0a1b56",
+           data: [130, 130, 130, 130, 130, 130, 130, 130],
+           fill: false,
+           borderDash: [10,5],
+           pointStyle: 'circle',
+           backgroundColor: 'rgba(255, 99, 132, 0.2)',
+           pointRadius: 5,
+           pointHoverRadius: 7,
+           lineTension: 0,
          }]
        },
        // Configuration options go here
-       options: {}
+       options: {
+         scales: {
+           yAxes: [{
+             ticks: {
+               suggestedMax: 140,
+               suggestedMin: 60
+             }
+           }]
+         }
+       }
      });
 
      </script>
