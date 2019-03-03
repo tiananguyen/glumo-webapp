@@ -11,10 +11,14 @@
       <a href = "#Login"><i class = "fa fa-fw fa-user"></i> Login </a>
       <a href = "#Reports"><i class = "fa fa-fw fa-chart-bar"></i> Reports </a>
       <a href = "#New_Glucose"><i class = "fa fa-fw fa-plus"></i>New Glucose </a>
+      <div class = "topnav-left">
+        <a href = "#Home"><i class = "fa fa-fw fa-home"></i> </a>
+      </div>
     </div>
-    <h1><center>Welcome to Glumo!</center></h1>
+    <h1><center>Welcome to GluMo!</center></h1>
     <p><center> Always know your glucose level the easy way! </center></p>
     <br><br><br><br><br><br><br><br><br>
+    <!-- Buttons -->
     <center><div class "row">
       <a href = "#About" class = "customButton">LEARN MORE!</a>
       <a href = "#New_Glucose" class = "customButton">START NOW!</a>
@@ -22,10 +26,28 @@
 <!-- This is the CSS code -->
 <style>
 body {
+  background-image: url("http://rs274.pbsrc.com/albums/jj243/cfrey20/aim.gif~c200");
+  background-repeat: no-repeat;
   margin: 0;
   font: 26px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
 a {
-  color: #FF0000; }
+  color: #FF0000;
+}
+
+.site-logo {
+  background-color: black;
+  overflow: hidden;
+}
+
+.site-logo a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+
+  text-decoration: none;
+  font-size: 18px;
+}
 
 .topnav {
   background-color: black;
@@ -38,17 +60,21 @@ a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #31A6FF;
   color: black;
 }
 
 .topnav a.active {
   background-color: #4CAF50;
   color: white;
+}
+
+.topnav-left {
+  float:left
 }
 
 .customButton {
