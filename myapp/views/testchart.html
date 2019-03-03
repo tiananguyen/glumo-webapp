@@ -1,18 +1,169 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html>
+  <head>
+    <title>Glumo</title>
+    <link rel = "stylesheets" href = "style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="vendor/device-mockups/device-mockups.min.css">
+  </head>
+  <body>
+    <div class = "topnav">
+      <a href = "#Login"><i class = "fa fa-fw fa-user"></i> Login </a>
+      <a href = "#Reports"><i class = "fa fa-fw fa-chart-bar"></i> Reports </a>
+      <a href = "#New_Glucose"><i class = "fa fa-fw fa-plus"></i>New Glucose </a>
+    </div>
+    <h1><center>Welcome to Glumo!</center></h1>
+    <p><center> Always know your glucose level the easy way! </center></p>
+    <div class = "col-sm-12 text-center">
+      <a href = "#About" class = "customButton">LEARN MORE!</a>
+      <a href = "#New_Glucose" class = "customButton">START NOW!</a>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <h1>Blood Glucose Level</h1>
+      <h4>Date: <span id="date"></span></h4>
+          <div class="chart-container" style="position: relative; width:75vw; margin: auto;">
+              <canvas id="myChart"></canvas>
+          </div>
+          <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+          <script>
+              var socket = io.connect('http://localhost:3000');
+              //connect to server
+              var ctx = document.getElementById('myChart').getContext('2d');
+              var chart = new Chart(ctx, {
+                  // The type of chart we want to create
+                  type: 'line',
+                  // The data for our dataset
+                  data: {
+                  labels: [],
+                  datasets: [{
+                      label: "Blood Glucose Level",
+                      borderColor: "#cccccc",
+                      data: [111, 113, , 113, 112, 112, 112, 111, 113, 111, 112, 112, 112, 113, 113, 112, 112],
+                      fill: false,
+                      pointStyle: 'circle',
+                      backgroundColor: '#ffffff',
+                      pointRadius: 5,
+                      pointHoverRadius: 8,
+                      lineTension: 1,
+                  }]
+                },
+                // Configuration
+                options: {}
+
+            });
+            //As a glucose reading is received
+            socket.on('glucose', function(data) {
+                  console.log(data.glucose);
+                  document.getElementById('date').innerHTML = data.date;
+                  //update the date
+                  //If we have less than 15 data points in the graph
+                  if(chart.data.labels.length != 15) {
+                    //Add time in x-axis
+                      chart.data.labels.push(data.time);
+                      chart.data.datasets.forEach((dataset) => {
+                        //Add glucose in y-axis
+                          dataset.data.push(data.glucose);
+                      });
+                  }
+                  //If there are already 15 data points in the graph.
+                  else {
+                      //Remove first time data
+                      chart.data.labels.shift();
+                      //Insert latest time data
+                      chart.data.labels.push(data.time);
+                      chart.data.datasets.forEach((dataset) => {
+                          //Remove first temp data
+                          dataset.data.shift();
+                          //Insert latest glucose data
+                          dataset.data.push(data.glucose);
+                      });
+                  }
+                  chart.update(); //Update the graph.
+              });
+
+<!-- This is the CSS code -->
+<style>
+body {
+  padding: 50px;
+  font: 26px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #FF0000; }
+
+.topnav {
+  background-color: black;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.customButton {
+  color: #31A6FF;
+  font-family: Muli, Helvetica, Aria, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  text-aligne: center;
+  text-decoration: none;
+  letter-spacing: 2px;
+
+  border: solid 2px #31A6FF;
+  border-radius: 50px;
+
+  padding-bottom: 12px;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top:12px;
+  vertical-align: middle;
+  marginleft: 1%;
+  margin-right: 1%;
+
+  -webkit-transition-duration: .35s;
+  transition-duration: .35s;
+}
+
+.customButton:hover {
+  background-color: #31A6FF;
+  color: #fff;
+}
+
+</style>
+
+</html>
+=======
 <html lang="en">
 
 <head>
     <title>Your Glucose Reading Records</title>
-    
+
     <!-- Library for chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 </head>
-    
+
 <body>
     <canvas id="myChart"></canvas>
     <script>
         // var socket = io.connect('http://localhost:3000'); //connect to server
-        
+
         /*
         if(there is a new reading) {
             mychart.addData([60], 'M'); // [data] , date on x-axis
@@ -20,7 +171,7 @@
         */
 
       var ctx = document.getElementById('myChart').getContext('2d');
-        
+
       /* Create chart for
       var myChart = new Chart(ctx, {
       type: 'line',
@@ -33,9 +184,9 @@
       }
       });
       */
-        
-        
-        
+
+
+
         //var cv = $("#canvas").get(0).getContext("2d");
 
         //var mychart = new Chart(cv).Line(data);
@@ -61,7 +212,8 @@
     // Configuration options go here
     options: {}
 });
-        
+
     </script>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+>>>>>>> 537c460df74207ecb3766fb8af6e1a7082f06f84
