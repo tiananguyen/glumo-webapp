@@ -18,4 +18,8 @@ router.get('/home', function(req, res) {
   res.render('index.ejs');
 });
 
+router.get('/info', function(req, res) {
+  res.render('info.ejs');
+});
+
 module.exports = router;
