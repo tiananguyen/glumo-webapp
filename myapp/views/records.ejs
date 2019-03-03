@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Glumo</title>
+    <link rel = "stylesheets" href = "style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="vendor/device-mockups/device-mockups.min.css">
+  </head>
+
+  <body>
+    <div class = "topnav">
+      <a href = "#Login"><i class = "fa fa-fw fa-user"></i> Login </a>
+      <a href = "records"><i class = "fa fa-fw fa-chart-bar"></i> Reports </a>
+      <a href = "#New_Glucose"><i class = "fa fa-fw fa-plus"></i>New Glucose </a>
+    </div>
+    <h1><center>Your Glucose Reading Records</center></h1>
+
+    <!-- Display the chart -->
+    <canvas id="myChart"></canvas>
+    <!-- Library for chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+    <script>
+       var ctx = document.getElementById('myChart').getContext('2d');
+       // Create chart for
+       var chart = new Chart(ctx, {
+       // The type of chart we want to create
+       type: 'line',
+       // The data for our dataset
+       data: {
+         labels: ['02/25/2019', '02/26/2019', '02/27/2019', '02/28/2019', '03/01/2019', '03/02/2019', '03/03/2019'],
+         datasets: [{
+             label: "Glucose Reading Records",
+             borderColor: "#ff305c",
+             data: [110,113,119,110,120,115,111,112],
+             fill: true,
+             pointStyle: 'circle',
+             backgroundColor: 'rgba(255, 99, 132, 0.2)',
+             pointRadius: 5,
+             pointHoverRadius: 7,
+             lineTension: 0,
+         }]
+       },
+       // Configuration options go here
+       options: {}
+     });
+
+    </script>
+
+    <!-- CSS code -->
+    <style>
+      body {
+        padding: 50px;
+        font: 26px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      a {
+        color: #FF0000;
+      }
+      .topnav {
+        background-color: black;
+        overflow: hidden;
+      }
+      .topnav a {
+        float: right;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .topnav a.active {
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+</html>
