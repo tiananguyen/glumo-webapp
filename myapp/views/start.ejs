@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Glumo</title>
+    <link rel = "stylesheets" href = "style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="vendor/device-mockups/device-mockups.min.css">
+  </head>
+  <body>
+    <div class = "topnav">
+      <a href = "#Login"><i class = "fa fa-fw fa-user"></i> Login </a>
+      <a href = "#Reports"><i class = "fa fa-fw fa-chart-bar"></i> Reports </a>
+      <a href = "start"><i class = "fa fa-fw fa-plus"></i>New Glucose </a>
+    </div>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <h1>Blood Glucose Level</h1>
+      <!--<h4>Date: <span id="date"></span></h4>-->
+        <!--  <div class="chart-container" style="position: relative; width:75vw; margin: auto;">-->
+            <canvas id="myChart"></canvas>
+          </div>
+        <!--<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+          <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>-->
+          <script>
+              //var socket = io.connect('http://localhost:3000');
+              //connect to server
+              var ctx = document.getElementById('myChart').getContext('2d');
+              var chart = new Chart(ctx, {
+                  // The type of chart we want to create
+                  type: 'line',
+                  // The data for our dataset
+                  data: {
+                  labels: ['11:00 AM', '11:01 AM', '11:02 AM', '11:03 AM', '11:04 AM', '11:05 AM', '11:06 AM', '11:07 AM'],
+                  datasets: [{
+                      label: "Blood Glucose Level",
+                      borderColor: "#ff305c",
+                      data: [111, 112, 112, 111, 111, 112, 112, 111],
+                      fill: true,
+                      pointStyle: 'circle',
+                      backgroundColor: 'rgba(255, 90, 132, 0.2)',
+                      pointRadius: 5,
+                      pointHoverRadius: 7,
+                      lineTension: 0,
+                  },
+                  {
+                    label: "Low",
+                    borderColor: "#0a1b56",
+                    data: [70, 70, 70, 70, 70, 70, 70, 70],
+                    fill: false,
+                    borderDash: [10,5],
+                    pointStyle: 'circle',
+                    backgroundColor: 'rgba(255, 90, 132, 0.2)',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    lineTension: 0,
+                  },
+                  {
+                    label: "High",
+                    borderColor: "#0a1b56",
+                    data: [130, 130, 130, 130, 130, 130, 130, 130],
+                    fill: false,
+                    borderDash: [10,5],
+                    pointStyle: 'circle',
+                    backgroundColor: 'rgba(255, 90, 132, 0.2)',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    lineTension: 0,
+                  },]
+                },
+                // Configuration
+                options: {
+                  scales: {
+                    yAxes: [{
+                      ticks: {
+                        suggestedMax: 140,
+                        suggestedMin: 60
+                      }
+                    }]
+                  }
+                }
+            });
+            </script>
+          <!-- //As a glucose reading is received
+            socket.on('glucose', function(data) {
+                  console.log(data.glucose);
+                  document.getElementById('date').innerHTML = data.date;
+                  //update the date
+                  //If we have less than 15 data points in the graph
+                  if(chart.data.labels.length != 15) {
+                    //Add time in x-axis
+                      chart.data.labels.push(data.time);
+                      chart.data.datasets.forEach((dataset) => {
+                        //Add glucose in y-axis
+                          dataset.data.push(data.glucose);
+                      });
+                  }
+                  //If there are already 15 data points in the graph.
+                  else {
+                      //Remove first time data
+                      chart.data.labels.shift();
+                      //Insert latest time data
+                      chart.data.labels.push(data.time);
+                      chart.data.datasets.forEach((dataset) => {
+                          //Remove first temp data
+                          dataset.data.shift();
+                          //Insert latest glucose data
+                          dataset.data.push(data.glucose);
+                      });
+                  }
+                  chart.update(); //Update the graph.
+              });-->
+
+<!-- This is the CSS code -->
+<style>
+body {
+  padding: 50px;
+  font: 26px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #FF0000; }
+
+.topnav {
+  background-color: black;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.customButton {
+  color: #31A6FF;
+  font-family: Muli, Helvetica, Aria, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  text-aligne: center;
+  text-decoration: none;
+  letter-spacing: 2px;
+
+  border: solid 2px #31A6FF;
+  border-radius: 50px;
+
+  padding-bottom: 12px;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top:12px;
+  vertical-align: middle;
+  marginleft: 1%;
+  margin-right: 1%;
+
+  -webkit-transition-duration: .35s;
+  transition-duration: .35s;
+}
+
+.customButton:hover {
+  background-color: #31A6FF;
+  color: #fff;
+}
+
+</style>
+
+</html>
