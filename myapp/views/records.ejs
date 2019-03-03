@@ -25,60 +25,61 @@
     <script>
        var ctx = document.getElementById('myChart').getContext('2d');
        // Create chart for
-       var chart = new Chart(ctx, {
-       // The type of chart we want to create
-       type: 'line',
-       // The data for our dataset
-       data: {
-         labels: ['02/25/2019', '02/26/2019', '02/27/2019', '02/28/2019', '03/01/2019', '03/02/2019', '03/03/2019'],
-         datasets: [{
-             label: "Glucose Reading Records",
-             borderColor: "#003300",
-             data: [110,113,119,110,120,115,111,112],
-             fill: true,
-             pointStyle: 'circle',
-             backgroundColor: 'rgb(230,255,230, .5)',
-             pointRadius: 5,
-             pointHoverRadius: 7,
-             lineTension: 0,
-         },
-         {
-           label: "Low",
-           borderColor: "#0a1b56",
-           data: [70, 70, 70, 70, 70, 70, 70, 70],
-           fill: false,
-           borderDash: [10,5],
-           pointStyle: 'circle',
-           backgroundColor: 'rgba(255, 99, 132, 0.2)',
-           pointRadius: 5,
-           pointHoverRadius: 7,
-           lineTension: 0,
-         },
-         {
-           label: "High",
-           borderColor: "#0a1b56",
-           data: [130, 130, 130, 130, 130, 130, 130, 130],
-           fill: false,
-           borderDash: [10,5],
-           pointStyle: 'circle',
-           backgroundColor: 'rgba(255, 99, 132, 0.2)',
-           pointRadius: 5,
-           pointHoverRadius: 7,
-           lineTension: 0,
-         }]
-       },
-       // Configuration options go here
-       options: {
-         scales: {
-           yAxes: [{
-             ticks: {
-               suggestedMax: 140,
-               suggestedMin: 60
-             }
-           }]
-         }
-       }
-     });
+
+>>>>>>> tiana
+var chart = new Chart(ctx, {
+// The type of chart we want to create
+type: 'line',
+// The data for our dataset
+labels: ['02/25/2019', '02/26/2019', '02/27/2019', '02/28/2019', '03/01/2019', '03/02/2019', '03/03/2019'],
+ datasets: [{
+     label: "Glucose Reading Records",
+     borderColor: "#003300",
+     data: [110,113,119,110,120,115,111,112],
+     fill: true,
+     pointStyle: 'circle',
+     backgroundColor: 'rgb(230,255,230, .5)',
+     pointRadius: 5,
+     pointHoverRadius: 7,
+     lineTension: 0,
+ },
+ {
+   label: "Low",
+   borderColor: "#0a1b56",
+   data: [70, 70, 70, 70, 70, 70, 70, 70],
+   fill: false,
+   borderDash: [10,5],
+   pointStyle: 'circle',
+   backgroundColor: 'rgb(230,255,230, .5)',
+   pointRadius: 5,
+   pointHoverRadius: 7,
+   lineTension: 0,
+ },
+ {
+   label: "High",
+   borderColor: "#0a1b56",
+   data: [130, 130, 130, 130, 130, 130, 130, 130],
+   fill: false,
+   borderDash: [10,5],
+   pointStyle: 'circle',
+   backgroundColor: 'rgb(230,255,230, .5)',
+   pointRadius: 5,
+   pointHoverRadius: 7,
+   lineTension: 0,
+ }]
+},
+// Configuration options go here
+options: {
+ scales: {
+   yAxes: [{
+     ticks: {
+       suggestedMax: 140,
+       suggestedMin: 60
+     }
+   }]
+ }
+}
+});
 
      </script>
 
@@ -122,74 +123,12 @@
     }
 
     .topnav a:active {
-      background-color: #31A6FF;
+      background-color: #FFFFFF;
       color: white;
     }
 
     .topnav-left {
       float:left
-    }
-
-    .customButton {
-      color: #31A6FF;
-      font-family: Muli, Helvetica, Aria, sans-serif;
-      font-weight: 400;
-      font-size: 15px;
-      text-aligne: center;
-      text-decoration: none;
-      letter-spacing: 2px;
-
-          border: solid 2px #31A6FF;
-          border-radius: 50px;
-
-          padding-bottom: 12px;
-          padding-left: 45px;
-          padding-right: 45px;
-          padding-top:12px;
-          vertical-align: middle;
-          marginleft: 1%;
-          margin-right: 1%;
-
-          -webkit-transition-duration: .35s;
-          transition-duration: .35s;
-        }
-
-
-    .customButton:hover {
-      background-color: #31A6FF;
-      color: #fff;
-    }
-
-    .customButton2 {
-      color: #31A6FF;
-      font-family: Muli, Helvetica, Aria, sans-serif;
-      font-weight: 400;
-      font-size: 15px;
-      text-aligne: center;
-      text-decoration: none;
-      letter-spacing: 2px;
-      background-color: rgba(178, 034, 034, 0.8);
-
-
-      border: solid 2px #31A6FF;
-      border-radius: 50px;
-
-      padding-bottom: 12px;
-      padding-left: 45px;
-      padding-right: 45px;
-      padding-top:12px;
-      vertical-align: middle;
-      marginleft: 1%;
-      margin-right: 1%;
-
-      -webkit-transition-duration: .35s;
-      transition-duration: .35s;
-    }
-
-
-    .customButton2:hover {
-      background-color: #31A6FF;
-      color: #fff;
     }
   </style>
 
