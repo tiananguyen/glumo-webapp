@@ -33,11 +33,11 @@
     type: 'line',
                   // The data for our dataset
     data: {
-    labels: ['11:00 AM', '11:01 AM', '11:02 AM', '11:03 AM', '11:04 AM', '11:05 AM', '11:06 AM', '11:07 AM'],
+    labels: [/*'11:00 AM', '11:01 AM', '11:02 AM', '11:03 AM', '11:04 AM', '11:05 AM', '11:06 AM', '11:07 AM'*/],
     datasets: [{
       label: "Blood Glucose Level",
       borderColor: "#003300",
-      data: [111, 112, 112, 111, 111, 112, 112, 111],
+      data: [/*111, 112, 112, 111, 111, 112, 112, 111*/],
       fill: true,
       pointStyle: 'circle',
       backgroundColor: 'rgba(230, 255, 230, 0.5)',
@@ -82,8 +82,8 @@
                   }
                 }
             });
-            </script>
-          <!-- //As a glucose reading is received
+
+          //As a glucose reading is received
             socket.on('glucose', function(data) {
                   console.log(data.glucose);
                   document.getElementById('date').innerHTML = data.date;
@@ -111,7 +111,8 @@
                       });
                   }
                   chart.update(); //Update the graph.
-              });-->
+              });
+              </script>
 
 <!-- This is the CSS code -->
 <style>
