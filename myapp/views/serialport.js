@@ -8,12 +8,12 @@ var server = app.listen(3000, () => {
 //Bind socket.io to our express server.
 var io = require('socket.io')(server);
 //Send index.html page on GET
-app.use(express.static('views'));
+app.use(express.static('/myapp/views'));
 
 const SerialPort = require('serialport');
 const Readline = SerialPort.parsers.Readline;
 //Connect serial port to port.....
-const port = new SerialPort('');
+const port = new SerialPort('/dev/cu.usbserial-1440');
  //Read the line only when new line comes.
 const parser = port.pipe(new Readline({delimiter: '\r\n'}));
  //Read data
