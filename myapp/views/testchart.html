@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Your Glucose Reading Records</title>
+    
+    <!-- Library for chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+</head>
+    
+<body>
+    <canvas id="myChart"></canvas>
+    <script>
+        // var socket = io.connect('http://localhost:3000'); //connect to server
+        
+        /*
+        if(there is a new reading) {
+            mychart.addData([60], 'M'); // [data] , date on x-axis
+        }
+        */
+
+      var ctx = document.getElementById('myChart').getContext('2d');
+        
+      /* Create chart for
+      var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: ['02/25/2019', '02/26/2019', '02/27/2019', '02/28/2019', '03/01/2019', '03/02/2019', '03/03/2019'],
+          datasets: [{
+          data: [110,113,119,110,120,115,111,112], // for glucose record
+          backgroundColor: "rgba(153,255,51,0.4)"
+      }]
+      }
+      });
+      */
+        
+        
+        
+        //var cv = $("#canvas").get(0).getContext("2d");
+
+        //var mychart = new Chart(cv).Line(data);
+
+    var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+    // The data for our dataset
+    data: {
+    labels: ['02/25/2019', '02/26/2019', '02/27/2019', '02/28/2019', '03/01/2019', '03/02/2019', '03/03/2019'],
+    datasets: [{
+        label: "Glucose Reading Records",
+        borderColor: "#cccccc",
+        data: [110,113,119,110,120,115,111,112],
+        fill: false,
+        pointStyle: 'circle',
+        backgroundColor: '#ffffff',
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        lineTension: 0,
+    }]
+    },
+    // Configuration options go here
+    options: {}
+});
+        
+    </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
